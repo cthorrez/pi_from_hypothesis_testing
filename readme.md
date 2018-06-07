@@ -1,4 +1,4 @@
-In this project I estimate the valu of pi using statistical tests.
+In this project I estimate the value of pi using statistical tests.
 I generate data sets with set linear coefficients and then train OLS regression on them.
 I then perform tests on the regression estimated coefficients.
 I compute the wald test statistic with the dual hypothesis that each coefficient is the true value.
