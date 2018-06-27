@@ -1,4 +1,0 @@
-z reject rate: 0.53466923
-w reject rate: 0.60727936
-7261013
-estimate of pi: 3.14141138187
