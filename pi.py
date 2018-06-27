@@ -168,7 +168,7 @@ def main():
 		 		 [0,0,1]])
 	b = np.array([[Beta[1],Beta[2]]]).T
 		
-	iters = 10000000			# number of data sets to construct and test
+	iters = 1000000				# number of data sets to construct and test
 	n_d = 1000					# number of points per data set
 	n_processes = 8				# number of processes to split the work across
 	n_t = iters/n_processes
