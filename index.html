@@ -231,9 +231,20 @@ The purpose of a hypothesis test is to determine whether the estimate we made, $
 
 <h3>What I Learned and Final Thoughts</h3>
 <p>
-  
+  The idea for this project came as about a two second idea while in class. Now about 8 months later, it took me almost a month to get this all to work. Along the way I had to relearn almost completely the Z and Wald test becasue I had misunderstood both how they were calculated and the relationship between power and significance of the tests. Realizing that the tests had to be set to have the same value of the acceptance cutoff an not be calibrated to have the same power or significance was an important realization. I initially thought that if the Z and Wald tests were calibrated to have the same power, their ratio of true accepts would yield pi, this was not the case.
 </p>
-
+<p>
+  This project also helped me understnd the chi squared distribution in a much deeper way. Seeing that the degrees of freedom is the number of squared Gaussians and can be determined by the sum of squared individual Z test statistics was very eye opening. 
+</p>
+<p>
+  Before this I never knew the trick of putting samples of any distrbution through the CF to obtain uniform smaples. In my research about this I also learned a lot more about conversion between various statistical distributions and a much more useful application of this being putting uniform samples through the inverse CDF to obtain samples from any desired distribution.
+</p>
+<p>
+  Finally I had a lot of fun learning a little bit about multiprocessing in python. I was inspired to try it by a thread on <a href="https://www.reddit.com/r/MachineLearning/comments/8tddaa/d_what_are_the_most_underratedunknown_great/e16yc73/">reddit</a>. I realized that my computer has 4 cores with hyperthreading and my single threaded python code was not fuly utilizing my CPU and all of these samples were independent so they could easily be split across multiple processes. I think this will come in handy a lot in the futue.
+</p>
+<p>
+  If you read all the way here, thanks for putting up my writing. I realized part way through that this might read like the ramblings of a lunatic but I've gotten this far so I'm not rewriting it.
+</p>
 
 
 <p>
