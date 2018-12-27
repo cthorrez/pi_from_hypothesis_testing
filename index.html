@@ -79,14 +79,14 @@ In this equation the $\beta$'s are true unknown values which we are trying to ap
 
 <h3>Hypothesis Tests</h3>
 <p>
-The purpose of a hypothesis test is to determine whether the estimate we made, $\hat{\beta}$, is statistically significant. For example, in the previous example, let's say we solve the equations and find that $\hat{\beta_2} = 100,000$. This means that for every bedroom added to the house, the expected selling price increases by $\$100,000$. We may wish to ask, "How likely is it that, if the number of bedrooms does not affect the true price, that I would have observed this data?" If the answer to to that question is, "very very unlikely", we say that the number of bedrooms is statisticaly significant in predicting the selling price of a house. Similarly we can ask the converse question: "How likely is it that, if the number of bedrooms impacts the selling price by $\hat{\beta_2}$, that we would observe this data?" This is probably going to be much more likely becasue the equation we used to solve for $\hat{\beta}$ has the property that it actaully maximizes that probability. 
+The purpose of a hypothesis test is to determine whether the estimate we made, $\hat{\beta}$, is statistically significant. For example, in the previous example, let's say we solve the equations and find that $\hat{\beta_2} = 100,000$. This means that for every bedroom added to the house, the expected selling price increases by $\$100,000$. We may wish to ask, "How likely is it that, if the number of bedrooms does not affect the true price, that I would have observed this data?" If the answer to to that question is, "very very unlikely", we say that the number of bedrooms is statisticaly significant in predicting the selling price of a house. Similarly we can ask the converse question: "How likely is it that, if the number of bedrooms impacts the selling price by $\hat{\beta_2}$, that we would observe this data?" This is probably going to be much more likely because the equation we used to solve for $\hat{\beta}$ has the property that it actaully maximizes that probability. 
 </p>
 <p>
   However these tests can go wrong. In reality, there are countless other factors that go into the selling price of a house. We do not choose to model every possible thing so they are included in the model as a "noise" term with mean 0. 
   $$ \textrm{price} = \beta_0 + \beta_1 * \textrm{sq ft} + \beta_2 * \textrm{#bedrm} + \epsilon $$
 </p>
 <p>
-  Due to this noise, it is possible for a statistical test to get the wrong answer. For example, we might ask how likely it is to see this data if the true value of $\beta_2$ is $\hat{\beta_2}$? And the test could say "not likely at all", even if it was the case that $\beta_2 = \hat{\beta_2}$. This is known as a false reject. This is becasue in this test, the null hypothesis was that $\beta_2 = \hat{\beta_2}$, and the test rejected that, even though it was true.
+  Due to this noise, it is possible for a statistical test to get the wrong answer. For example, we might ask how likely it is to see this data if the true value of $\beta_2$ is $\hat{\beta_2}$? And the test could say "not likely at all", even if it was the case that $\beta_2 = \hat{\beta_2}$. This is known as a false reject. This is because in this test, the null hypothesis was that $\beta_2 = \hat{\beta_2}$, and the test rejected that, even though it was true.
 </p>
 
 <h4>The Z test</h4>
@@ -100,7 +100,7 @@ The purpose of a hypothesis test is to determine whether the estimate we made, $
   Then we can treat $z$ as if it was sampled from a standard normal (it actually was!) and see how likely/unlikely it was. We can compare it to a threshold we set ahead of time to test its significance. 
 </p>
 <p>
-  For example, if we wanted 95% significance or our test, we would use the theshold value of 1.96. This is becasue 95% of the probability mass of the standard normal falls between -1.96 and 1.96. This means that if in reality the null hypothesis was true, there is a 95% chance that $z$ would fall into that range. Thus is we observe a $z$ which is less than -1.96 or greater than 1.96, we reject the null hypothesis. 
+  For example, if we wanted 95% significance or our test, we would use the theshold value of 1.96. This is because 95% of the probability mass of the standard normal falls between -1.96 and 1.96. This means that if in reality the null hypothesis was true, there is a 95% chance that $z$ would fall into that range. Thus is we observe a $z$ which is less than -1.96 or greater than 1.96, we reject the null hypothesis. 
 </p>
 <p>
   To convince yourself of this you can look at the equation for $z$ and note that large or small values could be obtained by there being a large absolute difference between $\hat{\beta_j}$ and $\bar{\beta_j}$. This means that if the hypothesized value is far from the value obtained by linear regression, we are more likely to reject.
@@ -123,7 +123,7 @@ The purpose of a hypothesis test is to determine whether the estimate we made, $
   Unlike $z$ which was compared against the standard normal distribution, $w$ is compared against the <a href="https://en.wikipedia.org/wiki/Chi-squared_distribution">Chi squared</a> distribution with as many degrees of freedom as there are constraints (rows) in the matrix $C$. The Chi squared distribution with $k$ degrees of freedom is defined as the sum of $k$ independent squared standard normal distributions.
 </p>
 <p>
-  Becasue the Chi squared distribution is the sum of squared Gaussians, it only takes positive values. For this reason we only reject if the test statistic is above a predetermined cutoff value.
+  because the Chi squared distribution is the sum of squared Gaussians, it only takes positive values. For this reason we only reject if the test statistic is above a predetermined cutoff value.
 </p>
 <h3>The Geometry of Hypothesis Tests</h3>
 <p>
@@ -142,7 +142,7 @@ The purpose of a hypothesis test is to determine whether the estimate we made, $
 </p>
 <h4>Two Independent Z tests</h4>
 <p>
-  The first test I want to perform is actually two tests. I will perform a Z test on each of the linear regression estimates $\hat{\beta_1}$ and $\hat{\beta_2}$ with the hypotheses being $\hat{\beta_1} = 1$ and $\hat{\beta_2} = -1$. Becasue I constructed the data sets myself according to a true known linear equation, I expect these estimates to be close to $1$ and $-1$ respectively. However, due to the Gaussian noise, they could be off by a little bit, or even a lot.
+  The first test I want to perform is actually two tests. I will perform a Z test on each of the linear regression estimates $\hat{\beta_1}$ and $\hat{\beta_2}$ with the hypotheses being $\hat{\beta_1} = 1$ and $\hat{\beta_2} = -1$. because I constructed the data sets myself according to a true known linear equation, I expect these estimates to be close to $1$ and $-1$ respectively. However, due to the Gaussian noise, they could be off by a little bit, or even a lot.
 </p>
 <p>
   The combined test will follow this rule: If the $z$ value from either Z test is larger than 1 or less than -1, reject, otherwise accept. That is to say, I reject my combined hypothesis if either of the individual Z tests reject. I accept only if the Z tests for both coefficients accept. And the threshold value for acceptance is 1. This threshold is also arbitrary, the only thing that matters is that I use the same threshold for my second test. In general we would expect to see mostly accepts because our null hypothesis is actaully true. 
@@ -231,7 +231,7 @@ The purpose of a hypothesis test is to determine whether the estimate we made, $
 
 <h3>What I Learned and Final Thoughts</h3>
 <p>
-  The idea for this project came as about a two second idea while in class. Now about 8 months later, it took me almost a month to get this all to work. Along the way I had to relearn almost completely the Z and Wald test becasue I had misunderstood both how they were calculated and the relationship between power and significance of the tests. Realizing that the tests had to be set to have the same value of the acceptance cutoff an not be calibrated to have the same power or significance was an important realization. I initially thought that if the Z and Wald tests were calibrated to have the same power, their ratio of true accepts would yield pi, this was not the case.
+  The idea for this project came as about a two second idea while in class. Now about 8 months later, it took me almost a month to get this all to work. Along the way I had to relearn almost completely the Z and Wald test because I had misunderstood both how they were calculated and the relationship between power and significance of the tests. Realizing that the tests had to be set to have the same value of the acceptance cutoff an not be calibrated to have the same power or significance was an important realization. I initially thought that if the Z and Wald tests were calibrated to have the same power, their ratio of true accepts would yield pi, this was not the case.
 </p>
 <p>
   This project also helped me understnd the chi squared distribution in a much deeper way. Seeing that the degrees of freedom is the number of squared Gaussians and can be determined by the sum of squared individual Z test statistics was very eye opening. 
