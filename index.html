@@ -206,7 +206,7 @@ The purpose of a hypothesis test is to determine whether the estimate we made, $
   Where $\textrm{erf}$ is the <a href="https://en.wikipedia.org/wiki/Error_function">error function</a><br>
   Since this is the standard normal, $\mu = 1$ and $\sigma = 1$ so this simplifies to:
   $$\frac{1}{2}\left[1+\textrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right]$$
-  I simply put each Z statistic into this function before comparing to the cutoff value. However I have to rescale and shift the resulting uniform random variable. The reason for this is that the resulting variable is in the range [0,1] which does not fit the geometry of my test. I decided to scale the results to a uniform istribution over the range [-2,2] so that the entire acceptance region of both tests is covered and there is plenty of points in the rejection regions as well. To accomplish this I multiplied the variable by 4 which made it over the range [0,4] then subtracted 2 which made it over [-2,2]
+  I simply put each Z statistic into this function before comparing to the cutoff value. However I have to rescale and shift the resulting uniform random variable. The reason for this is that the resulting variable is in the range [0,1] which does not fit the geometry of my test. I decided to scale the results to a uniform distribution over the range [-2,2] so that the entire acceptance region of both tests is covered and there is plenty of points in the rejection regions as well. To accomplish this I multiplied the variable by 4 which made it over the range [0,4] then subtracted 2 which made it over [-2,2]
 </p>
 <p>
   Converting the Wald statistic ended up being a bit more complex. I can easily do what I did above and convert a Chi squared random variable to a uniform by using the CDF:
